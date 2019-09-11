@@ -1,4 +1,6 @@
-def new  
+class SessionsController < ApplicationController
+
+  def login 
     @user = User.new
   end
 
@@ -6,16 +8,18 @@ def new
     @user = User.find_by(email: user_params[:email])
     if @user && @user.authenticate(user_params[:password])
       session[:user_id] = @user.id
-      redirect_to user_##_path(@user)
+      redirect_to root_path
     else
       render :new
     end
   end
 
-  def destroy 
-    session.clear
-    redirect_to root_path
+  def logout
+    session.delete :user_id
+    flash[:notify] = "Goodbye Trainer!"
+    redirect_to login_path
   end
+
 
   private
     def user_params
