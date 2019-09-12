@@ -1,0 +1,9 @@
+<%= form_for tm do |f| %>
+    <%= f.label :name %>
+    <%= f.text_field :name %><br />
+    <%= f.label :type %>
+    <%= f.text_field :type %><br />
+    <%= f.label :rarity %>
+    <%= f.rarity :rarity%><br />
+    <%= f.submit %>
+  <% end %>

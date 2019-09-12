@@ -1,0 +1,9 @@
+<% @tms.each do |tm| %>
+    <tr>
+      <td><%= tm.name %></td>
+      <td><%= tm.type %></td>
+      <td><%= tm.rarity %></td>
+      <td><%= link_to 'Edit', edit_tm_path(tm) %></td>
+      <td><%= link_to 'Destroy', tm, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+  <% end %>
