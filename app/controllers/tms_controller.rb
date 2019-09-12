@@ -1,6 +1,6 @@
 class TmsController < ApplicationController
     def index
-        @tms = tm.all
+        @tms = current_user.tms.all
     end
 
     def new
@@ -9,7 +9,7 @@ class TmsController < ApplicationController
 
     def create
         @tm = Tm.create(tm_params)
-        if @tm
+        if @tm.save
           redirect_to root_path
         else
           render :new
@@ -30,6 +30,10 @@ class TmsController < ApplicationController
           render :edit
         end
       end
+
+
+
+
 
 private
 def tm_params

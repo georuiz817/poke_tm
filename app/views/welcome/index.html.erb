@@ -1,7 +1,9 @@
 <% if session[:user_id] %>
-  <h2> Welcome Trainer! Please choose a new action: </h2> 
-  
-  
+  <h2> Welcome Trainer! Please choose a new action: </h2>
+  <%= link_to 'Create a new TM', tms_path %>
+  <%= link_to 'View All Tms', tms_path %>
+  #Generate a new TM 
+  #View/Edit all your current TM - Pokemon assignements  
   <h2><%= link_to  "Logout", logout_path, method: :delete %></h2>
 
   <% else %> 
