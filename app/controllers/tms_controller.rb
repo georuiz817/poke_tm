@@ -1,5 +1,6 @@
 class TmsController < ApplicationController
-  
+  before_action :is_logged_in? 
+  before_action :current_user
   
     def index
         @tms = Tm.all

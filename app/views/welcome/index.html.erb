@@ -1,7 +1,15 @@
+<style> 
+body {
+  background-image: url("https://pm1.narvii.com/5818/90e76562781ac9de4c53786c72ddf359cb780857_hq.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+</style
+<body>
 <% if session[:user_id] %>
   <h2> Welcome Trainer! Please choose a new action: </h2>
   <h2> <%= link_to "Add a Pokemon to your group", new_pokemon_path%></h2>
-  <h2> <%= link_to "View your current group", users_path %> </h2> 
+  <h2> <%= link_to "view your pokemon group", pokemons_path %> </h2>  
   #View your current pokemon group / remove a pokemon from your current group
   # Assign a Pokemon to the TM of you choice 
    <h2> <%= link_to 'View all avaliable TMs', tms_path %> </h2>
@@ -13,3 +21,5 @@
   <h3> <%= link_to "Login", login_path %> </h3>
   <h3> <%= link_to 'Signup', signup_path %> </h3> 
 <% end %>
+
+</body>

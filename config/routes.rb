@@ -2,7 +2,17 @@ Rails.application.routes.draw do
   resources :tms 
   resources :pokemons
   resources :users
+
+  #nested routes
+  resources :users do
+    resources :pokemons 
+  end
   
+resources :users do 
+  resources :tms 
+end
+
+
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   root to: 'welcome#index'
   
