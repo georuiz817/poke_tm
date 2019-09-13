@@ -1,0 +1,5 @@
+<h2><%= @tm.name %></h2>
+<h2> Linked Pokemon : </h2>
+  <% @tm.pokemons.each do |pokemon| %>
+     <%= pokemon.name %>
+  <% end %>

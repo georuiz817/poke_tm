@@ -1,6 +1,8 @@
 class TmsController < ApplicationController
+  
+  
     def index
-        @tms = current_user.tms.all
+        @tms = Tm.all
     end
 
     def new
@@ -17,27 +19,16 @@ class TmsController < ApplicationController
       end
 
       def show
+        @tm = Tm.find(params[:id])
       end
     
       def edit
       end
     
-      def update
-        @tm.update(tm_params)
-        if @tm.save
-          redirect_to root_path
-        else
-          render :edit
-        end
-      end
-
-
-
-
-
+    
 private
 def tm_params
-    params.require(:tm).permit(:name, :type, :rarity)
+    params.require(:tm).permit(:name, :type, :rarity, )
   end
 end
 

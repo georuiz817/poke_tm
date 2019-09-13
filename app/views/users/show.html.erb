@@ -1,0 +1,11 @@
+<table class="table">
+<tbody>
+    <% @pokemons.each do |pokemon| %>
+        <% if pokemon.user_id == current_user.id %>
+            <tr>
+                <td>Pokemon: <%= pokemon.name %></td>
+            </tr>
+        <% end %>
+    <% end %>
+</tbody>
+</table>

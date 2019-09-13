@@ -13,12 +13,13 @@ class UsersController < ApplicationController
         redirect_to root_path
       end
     end
-
+   
     def show
-      if is_logged_in?
-        @user = User.find_by_id(params[:id])
+      if logged_in?
+        @user = User.find(params[:id])
+        @pokemons = Pokemon.all
       else
-        redirect_to root_path
+        redirect_to '/login'
       end
     end
   

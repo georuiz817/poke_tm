@@ -1,10 +1,11 @@
 <% if session[:user_id] %>
   <h2> Welcome Trainer! Please choose a new action: </h2>
-  <%= link_to 'Create a new TM', tms_path %>
-  <%= link_to 'View All Tms', tms_path %>
-  #Generate a new TM 
-  #View/Edit all your current TM - Pokemon assignements  
-  <h2><%= link_to  "Logout", logout_path, method: :delete %></h2>
+  <h2> <%= link_to "Add a Pokemon to your group", new_pokemon_path%></h2>
+  <h2> <%= link_to "View your current group", users_path %> </h2> 
+  #View your current pokemon group / remove a pokemon from your current group
+  # Assign a Pokemon to the TM of you choice 
+   <h2> <%= link_to 'View all avaliable TMs', tms_path %> </h2>
+   <h2><%= link_to  "Logout", logout_path, method: :delete %></h2>
 
   <% else %> 
   <h2> Welcome to the poke_tm manager</h2>
