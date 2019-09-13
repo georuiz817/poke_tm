@@ -16,8 +16,7 @@ class SessionsController < ApplicationController
 
   def logout
     session.delete :user_id
-    flash[:notify] = "Goodbye Trainer!"
-    redirect_to login_path
+    redirect_to root_path
   end
 
 

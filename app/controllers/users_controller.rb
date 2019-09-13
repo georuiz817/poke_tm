@@ -14,14 +14,7 @@ class UsersController < ApplicationController
       end
     end
    
-    def show
-      if logged_in?
-        @user = User.find(params[:id])
-        @pokemons = Pokemon.all
-      else
-        redirect_to '/login'
-      end
-    end
+
   
     private
       def user_params

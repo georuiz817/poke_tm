@@ -1,12 +1,11 @@
 class PokemonsController < ApplicationController
   
-  
   def index
-    @pokemons = current_user.pokemons.all 
+    @pokemons = Pokemons.all 
   end
 
   def show
-    @pokemon = Pokemon.find(params[:id])
+
   end
 
   def new
@@ -37,4 +36,3 @@ class PokemonsController < ApplicationController
   end
 end
 
-category_ids:[]
