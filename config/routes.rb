@@ -9,6 +9,10 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   root to: 'welcome#index'
   
+## for omni
+get '/auth/facebook/callback' => 'sessions#create'
+
+
   # changing routes to not get confused with naming 
   delete '/logout', to: "sessions#logout"
   get '/signup', to: "users#signup"
