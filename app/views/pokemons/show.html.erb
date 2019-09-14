@@ -1,8 +1,0 @@
-<h1><%= @user.trainer %></h1>
- 
-<%= link_to "New Pokemon", new_user_pokemon_path(@user) %>
-<%= f.hidden_field :author_id %>
-<p>Pokemon:</p>
-<% @user.pokemons.each do |pokemon| %>
-  <div><%= pokemon.name %></div>
-<% end %>

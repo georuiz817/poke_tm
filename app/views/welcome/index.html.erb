@@ -1,3 +1,4 @@
+#### css
 <style> 
 body {
   background-image: url("https://pm1.narvii.com/5818/90e76562781ac9de4c53786c72ddf359cb780857_hq.jpg");
@@ -5,16 +6,20 @@ body {
   background-size: cover;
 }
 </style
+####
+
+### when logged in 
 <body>
 <% if session[:user_id] %>
   <h2> Welcome Trainer! Please choose a new action: </h2>
-  <h2> <%= link_to "Add a Pokemon to your group", new_pokemon_path%></h2>
-  <h2> <%= link_to "view your pokemon group", pokemons_path %> </h2>  
-  #View your current pokemon group / remove a pokemon from your current group
-  # Assign a Pokemon to the TM of you choice 
-   <h2> <%= link_to 'View all avaliable TMs', tms_path %> </h2>
-   <h2><%= link_to  "Logout", logout_path, method: :delete %></h2>
-
+  #will also need      new_user_pokemon_path GET    /users/:user_id/pokemons/new(.:format)   
+  #/users/:user_id/pokemons
+  <h2><%= link_to "New Pokemon", new_user_pokemon_path(@user) %></h2>
+  <h2> <%= link_to "view your pokemon group", user_pokemons(user_url) %> </h2>  
+  <h2> <%= link_to 'View all avaliable TMs', tms_path %> </h2>
+  <h2><%= link_to  "Logout", logout_path, method: :delete %></h2>
+####
+#### when not logged in 
   <% else %> 
   <h2> Welcome to the poke_tm manager</h2>
   <h3> Please login or signup </h3> 
@@ -23,3 +28,4 @@ body {
 <% end %>
 
 </body>
+####

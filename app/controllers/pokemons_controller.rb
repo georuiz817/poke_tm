@@ -2,22 +2,23 @@ class PokemonsController < ApplicationController
   before_action :is_logged_in? 
   before_action :current_user
   before_action :set_user
-  def index
-    @pokemons = Pokemon.all
- end
-  
 
+   
   def show
     @pokemon = Pokemon.find(params[:id])
   end
-
+  
+    def index
+      @pokemons = @user.pokemons
+    end
+ 
+ 
   def new
-    @pokemon = Pokemon.new
+    @pokemon= Pokemon.new(user_id: params[:user_id])
   end
 
   def create
-    @pokemon = Pokemon.create(pokemon_params)
-    @pokemon.user_id = current_user.id
+    @pokemon = @user.pokemons.build(pokemon_params)
     @pokemon.save
     redirect_to pokemon_path(@pokemon)
   end
@@ -31,7 +32,7 @@ class PokemonsController < ApplicationController
   private
 
   def pokemon_params
-    params.require(:pokemon).permit(:name)
+    params.require(:pokemon).permit(:name, :user_id)
   end
 
 
