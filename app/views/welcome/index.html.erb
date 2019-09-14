@@ -12,10 +12,7 @@ body {
 <body>
 <% if session[:user_id] %>
   <h2> Welcome Trainer! Please choose a new action: </h2>
-  #will also need      new_user_pokemon_path GET    /users/:user_id/pokemons/new(.:format)   
-  #/users/:user_id/pokemons
-  <h2><%= link_to "New Pokemon", new_user_pokemon_path(@user) %></h2>
-  <h2> <%= link_to "view your pokemon group", user_pokemons(user_url) %> </h2>  
+
   <h2> <%= link_to 'View all avaliable TMs', tms_path %> </h2>
   <h2><%= link_to  "Logout", logout_path, method: :delete %></h2>
 ####
