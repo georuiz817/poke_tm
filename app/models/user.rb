@@ -7,4 +7,11 @@ class User < ApplicationRecord
     #associations 
     has_many :pokemons
     has_many :tms, through: :pokemons    
+
+    #omni
+
+    def self.find_or_create_by_facebook_omniauth(auth)
+        user = User.find_by(email: auth['info']['email'])
+    end
+    
 end
