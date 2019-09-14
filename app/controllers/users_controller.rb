@@ -4,16 +4,17 @@ class UsersController < ApplicationController
       @user = User.new
     end
   
-    def create 
-      @user = User.new(user_params)
-      if @user.save
-        session[:user_id] = @user.id
-        redirect_to root_path
+  def create
+      @user = User.create(user_params)
+      if @user.id == nil 
+        @errors = @user.errors.full_messages
+        render :signup
       else
+        session[:user_id] = @user.id
         redirect_to root_path
       end
     end
-   
+  
 
   
     private

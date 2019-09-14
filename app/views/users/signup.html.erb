@@ -1,4 +1,11 @@
-<h1> Sign up ! </h1> 
+<h1> Sign up ! </h1>
+<% if @user.errors.any? %>
+<% @errors.each do |message| %>
+  <li><%= message %></li>
+<% end %>
+<% end %>
+
+
 <p> <%= form_for @user do |f| %>
     <%= f.label :trainer %>
     <%= f.text_field :trainer %> <br>
