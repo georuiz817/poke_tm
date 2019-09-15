@@ -1,9 +1,11 @@
 Rails.application.routes.draw do
  ##resources
- resources :tms, only: [:index, :show]
+ resources :tms
+ resources :pokemons
+ resources :users 
  
  resources :users do
-    resources :pokemons, only: [:show, :index, :new]
+    resources :pokemons
   end
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html

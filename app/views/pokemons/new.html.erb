@@ -12,12 +12,6 @@ body {
 
 ####errors
 <h1> Add a new Pokemon to your group: </h1> 
-<% if @pokemon.errors.any? %>
-<% @errors.each do |message| %>
-  <li><%= message %></li>
-<% end %>
-<% end %>
-####
 
 #### pokemon creation, will need to put in a form 
 <%= form_for @pokemon do |f| %>

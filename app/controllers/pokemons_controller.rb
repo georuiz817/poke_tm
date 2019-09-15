@@ -13,17 +13,17 @@ def show
 end
 
 def new
-  @pokemon = Pokemon.new
-end
-
-def create
-  pokemon = Pokemon.new(pokemon_params)
-  if pokemon.save
-    redirect_to root_path
-  else
-    erb :new
+     @pokemon = Pokemon.new
   end
-end
+
+
+  def create
+    @pokemon = Pokemon.create(pokemon_params)
+    @pokemon.user_id = current_user.id
+    @pokemon.save
+    redirect_to root_path
+  end
+
 
 def edit
   
