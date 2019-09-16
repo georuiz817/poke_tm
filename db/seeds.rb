@@ -7,4 +7,16 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
-Tm.create(name:"Rock Smash", element: "Rock", rarity: "common")
+Tm.create(name:"Toxic", element: "Posion", rarity: "common")
+Tm.create(name:"Horn Drill",element:"Normal",rarity:"Common")
+Tm.create(name:"Bubble Beam",element:"Water",rarity:"Common")
+Tm.create(name:"Icea Beam",element:"Ice",rarity:"Rare")
+Tm.create(name:"Dig",element:"Ground",rarity:"Common")
+Tm.create(name:"Swift",element:"Normal",rarity:"Rare")
+Tm.create(name:"Rest",element:"Psychic",rarity:"Very Rare")
+Tm.create(name:"Fissure",element:"Ground",rarity:"Rare")
+Tm.create(name:"Submission",element:"Fighting",rarity:"Rare")
+Tm.create(name:"Mega Drain",element:"Grass",rarity:"Very Rare")
+Tm.create(name:"Counter",element:"Fighting",rarity:"Rare")
+Tm.create(name:"Dragon Rage",element:"Dragon",rarity:"Very Rare")
+Tm.create(name:"Pay Day",element:"Normal",rarity:"Common")

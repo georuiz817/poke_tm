@@ -1,11 +1,28 @@
-<h1> Here is your selected pokemons information </h1> 
+<style> 
+table, th, td {
+  border: 1px solid black;
+}
+</style>
 
-<h2>Name:  <%= @pokemon.name %> </h2> <br>
+<table>
+ <tr>
+   <th>Pokemon</th>
+</tr>
+ <tr>
+ <td><%= @pokemon.name %></td>
+ </tr>
+</table>
+<br>
 
-<h2>Equipped TM: </h2>  <br> 
-<h2>TM: <%= @pokemon.tm.name %> </h2> <br> 
-<h2>Element: <%= @pokemon.tm.element %> </h2> <br> 
-<h2>Rarity: <%= @pokemon.tm.rarity %> </h2> <br> 
-
-
-# delete in pokemon controller needs to be fixed 
+<table>
+ <tr>
+   <th>Linked TM</th> 
+   <th>Element</th>
+   <th>Rarity</th>
+</tr>
+ <tr>
+ <td><%= @pokemon.tm.name %></tdr> 
+ <td><%= @pokemon.tm.element %> </td>
+ <td><%= @pokemon.tm.rarity %></td> 
+ </tr>
+</table>

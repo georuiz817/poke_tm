@@ -1,8 +1,14 @@
-<h2> Here is your current Pokemon group! </h2> 
-
-<tbody>
-    <% @pokemons.each do |pokemon|%>
-    <ul>
-    <li><%= link_to pokemon.name, user_pokemon_path(@user, pokemon) %></li>
-   </ul>
-    <% end %>
+ <table>
+ <thead>
+   <tr>
+     <th>Here is your current group</th>
+   </tr>
+ </thead>
+ <tbody>
+   <% @pokemons.each do |pokemon| %>
+     <tr>
+       <td><%= link_to pokemon.name, user_pokemon_path(@user, pokemon)%></td>
+    </tr>
+   <% end %>
+ </tbody>
+</table>
