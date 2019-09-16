@@ -6,12 +6,11 @@ class TmsController < ApplicationController
     end
 
     def new
-        @tm = Tm.new
+        
     end
 
     def create
-      @tm = Tm.create(tm_params)
-      @tm.save
+    
   end
 
       def show
