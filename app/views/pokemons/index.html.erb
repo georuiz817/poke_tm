@@ -1,14 +1,16 @@
+<style> 
+table, th, td {
+  border: 1px solid black;
+}
+</style>
+ <h1> Here is your current Pokemon group </h1> 
  <table>
- <thead>
-   <tr>
-     <th>Here is your current group</th>
-   </tr>
- </thead>
- <tbody>
+ <tr>
+   <th>Pokemon Name</th>
+ </tr>
+ <tr>
    <% @pokemons.each do |pokemon| %>
-     <tr>
-       <td><%= link_to pokemon.name, user_pokemon_path(@user, pokemon)%></td>
+    <td><%= link_to pokemon.name, user_pokemon_path(@user, pokemon)%></td>
     </tr>
    <% end %>
- </tbody>
-</table>
+ </table>
