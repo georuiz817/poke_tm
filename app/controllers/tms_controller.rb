@@ -1,6 +1,5 @@
 class TmsController < ApplicationController
-  before_action :is_logged_in? 
-  before_action :current_user
+
   
     def index
         @tms = Tm.all
@@ -11,13 +10,9 @@ class TmsController < ApplicationController
     end
 
     def create
-        @tm = Tm.create(tm_params)
-        if @tm.save
-          redirect_to root_path
-        else
-          render :new
-        end
-      end
+      @tm = Tm.create(tm_params)
+      @tm.save
+  end
 
       def show
         @tm = Tm.find(params[:id])

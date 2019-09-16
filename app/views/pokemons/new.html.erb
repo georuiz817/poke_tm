@@ -1,26 +1,17 @@
-####css 
-<style> 
-body {
-  background-image: url("https://pm1.narvii.com/5818/90e76562781ac9de4c53786c72ddf359cb780857_hq.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-</style
-####
-
-<body>
-
-####errors
 <h1> Add a new Pokemon to your group: </h1> 
 
-#### pokemon creation, will need to put in a form 
 <%= form_for @pokemon do |f| %>
-        <%= f.hidden_field :user_id %>
-        <%= f.label :name, 'Name:'%>
-        <%= f.text_field :name %> <br> 
-        <%= f.submit "Add Pokemon"  %>
-<% end %>
-<br>
+        <%= f.label :name, "Name" %>
+        <%= f.text_field :name%>
+        <%= f.label :tm_id, "Link the desired TM to this pokemon:" %>
+        <%= f.collection_select :tm_id, Tm.all, :id, :name%> 
+    <%= f.submit "Submit" %>
+        <% end  %> 
+        <br>
+
+        
+
+        # a user should be able to create a TM and it will then be linked to the requested pokemon
 <%= link_to "Return Home", root_path %>
 </body>
 #####

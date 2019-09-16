@@ -1,39 +1,44 @@
 class PokemonsController < ApplicationController
+  before_action :current_user # @user avlaiable for all actions 
+  helper_method :logged_in? #makes sure some1 not logged in can create,view,delete pokemon 
 
   def index
-    @user = current_user
-    @pokemons = User.find(params[:user_id]).pokemons
-    @pokemons = @pokemons.where(user_id: @user.id)
-    
-  end 
+    @pokemons = @user.pokemons
+end
 
 
 def show
-  @pokemons = Pokemon.find(params[:id])
+  @pokemon = Pokemon.find(params[:id])
 end
 
 def new
-     @pokemon = Pokemon.new
-  end
+@pokemon = Pokemon.new
+end
 
-
-  def create
-    @pokemon = Pokemon.create(pokemon_params)
-    @pokemon.user_id = current_user.id
-    @pokemon.save
-    redirect_to root_path
-  end
+def create
+  @pokemon = current_user.pokemons.build(pokemon_params)
+     if @pokemon.save
+       redirect_to user_pokemons_path(current_user)
+      else 
+        render :new
+      end
+    end
 
 
 def edit
-  
 end
 
-  private
-
-  def pokemon_params
-    params.require(:pokemon).permit(:name, :user_id)
-  end
-
+def destroy
+  @pokemon = Pokemon.find([:id])
+  @pokemon.destroy
+  redirect_to root_path
 end
 
+private
+
+def pokemon_params
+  params.require(:pokemon).permit(:name, :user_id, :tm_id)
+end
+
+
+end

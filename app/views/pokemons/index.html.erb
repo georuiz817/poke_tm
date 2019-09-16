@@ -1,22 +1,8 @@
-<h1>Your current group</h1>
+<h2> Here is your current Pokemon group! </h2> 
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @pokemons.each do |pokemon| %>
-      <tr>
-        <td><%= pokemon.name %></td>
-        <%= link_to "Delete", pokemon, method: :delete, data: { confirm: "Really?" } %>
-        </tr>
+<tbody>
+    <% @pokemons.each do |pokemon|%>
+    <ul>
+    <li><%= link_to pokemon.name, user_pokemon_path(@user, pokemon) %></li>
+   </ul>
     <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Pokemon', new_user_pokemon_path %>
