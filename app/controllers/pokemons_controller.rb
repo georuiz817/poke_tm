@@ -27,8 +27,18 @@ def create #created a new pokemon for the specific user, renders errors if any
     end
 
 
-def edit
-end
+    def edit
+     
+      end
+      
+        def update
+          if @pokemon.update(task_params)
+            user_pokemons_path
+          else
+            render :edit
+          end
+        end
+        
 
 def destroy
   Pokemon.find(params[:id]).destroy
