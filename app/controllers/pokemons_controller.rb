@@ -49,16 +49,13 @@ def create #created a new pokemon for the specific user, renders errors if any
         end
       end
 
-
-
-
-      
-
 def destroy
-  Pokemon.find(params[:id]).destroy
+  current_user.pokemons.find(params[:id]).destroy
   redirect_to root_path
 end
-private
+
+
+  private
 
 def pokemon_params
   params.require(:pokemon).permit(:name, :user_id, :tm_id)

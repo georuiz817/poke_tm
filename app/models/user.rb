@@ -11,8 +11,14 @@ class User < ApplicationRecord
 
     #omni
 
-    def self.find_or_create_by_facebook_omniauth(auth)
+    def self.find_or_create_by_omniauth(auth)
         user = User.find_by(email: auth['info']['email'])
-    end
+        if user.nil?
+         user = User.create(email: auth['info']['email'], password: SecureRandom.hex, uid: auth['uid'])
+         elsif user.uid.nil?
+             user.update(uid:auth['uid'])
+         end 
+         user
+      end
     
 end
