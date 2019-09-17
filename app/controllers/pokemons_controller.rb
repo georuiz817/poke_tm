@@ -1,4 +1,5 @@
 class PokemonsController < ApplicationController
+  before_action :set_user
   before_action :current_user # @user avlaiable for all actions 
   before_action :logged_in? #makes sure some1 not logged in can create,view,delete pokemon 
   before_action :redirect_if_not_signed_in
@@ -61,5 +62,8 @@ def pokemon_params
   params.require(:pokemon).permit(:name, :user_id, :tm_id)
 end
 
+def set_user
+  @user = User.find_by_id(params[:user_id])
+end
 
 end
