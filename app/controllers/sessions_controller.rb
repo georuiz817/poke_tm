@@ -14,16 +14,6 @@ class SessionsController < ApplicationController
     end
   end
 
-  def facebook
-    @user = User.find_or_create_by(uid: auth['uid']) do |u|
-      u.email = auth['info']['email']
-      u.password = 'password'
-    end
-    @user.save
-    session[:user_id] = @user.id
-    redirect_to root_path
-  end
-
 
   def logout
     session.delete :user_id

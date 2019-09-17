@@ -1,7 +1,17 @@
+<% if @pokemon.errors.any? %>
+<% @errors.each do |message| %>
+  <li><%= message %></li>
+<% end %>
+<% end %>
+
+
 <%= form_for @pokemon do |f| %>
+    <%= f.hidden_field :user_id %>
     <%= f.label :name, "Name" %>
     <%= f.text_field :name%>
     <%= f.label :tm_id, "Link the desired TM to this pokemon:" %>
     <%= f.collection_select :tm_id, Tm.all, :id, :name %> 
     <%= f.submit "Submit" %>
     <% end  %> 
+
+    
