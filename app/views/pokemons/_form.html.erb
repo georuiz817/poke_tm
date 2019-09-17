@@ -1,3 +1,9 @@
+<% if @pokemon.errors.any? %>
+<% @errors.each do |message| %>
+  <li><%= message %></li>
+<% end %>
+<% end %>
+
 <%= form_for @pokemon do |f| %>
 <%= f.label :name, "Name" %>
 <%= f.text_field :name%>

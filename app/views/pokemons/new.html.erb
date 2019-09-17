@@ -1,9 +1,3 @@
-<% if @pokemon.errors.any? %>
-<% @errors.each do |message| %>
-  <li><%= message %></li>
-<% end %>
-<% end %>
-
 <h1> Add a new Pokemon to your group: </h1> 
 
 <%= render 'form' %>
