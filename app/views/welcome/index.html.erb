@@ -1,5 +1,5 @@
 <body>
-<% if logged_in?%>
+<% if logged_in? %>
   <h2> Welcome Trainer! Please choose a new action: </h2>
   <ol>
   <li> <%= link_to 'Add a pokemon to your group', new_user_pokemon_path(current_user)%> </li> 
