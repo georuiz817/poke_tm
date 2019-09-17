@@ -7,15 +7,17 @@ class UsersController < ApplicationController
       @user = User.new
     end
   
-    def create  
-      @user = User.new(user_params)
-      if @user.save
-        session[:user_id] = @user.id
-        redirect_to user_pokemons_path(@user)
+    def create
+      @user = User.create(user_params)
+      if @user.id == nil 
+        @errors = @user.errors.full_messages
+        render :signup
       else
-        render :new
+        session[:user_id] = @user.id
+        redirect_to root_path
       end
     end
+     
   
 
   

@@ -13,7 +13,7 @@
 
 <table>
  <tr>
-   <th>Linked TM</th> 
+   <th>Equipped TM</th> 
    <th>Element</th>
    <th>Rarity</th>
 </tr>
@@ -26,3 +26,5 @@
 <br>
 <%= link_to "Edit", edit_user_pokemon_path(@user, @pokemon)%> <br>
 <%= link_to "Abandon this pokemon", user_pokemon_path(@user, @pokemon), method: "delete" %>
+<br>
+<%= render 'welcome/form' %>
