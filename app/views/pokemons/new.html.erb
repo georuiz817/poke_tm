@@ -6,15 +6,8 @@
 
 <h1> Add a new Pokemon to your group: </h1> 
 
-<%= form_for @pokemon do |f| %>
-        <%= f.label :name, "Name" %>
-        <%= f.text_field :name%>
-        <%= f.label :tm_id, "Link the desired TM to this pokemon:" %>
-        <%= f.collection_select :tm_id, Tm.all, :id, :name %> 
-        <%= f.submit "Submit" %>
-        <% end  %> 
-        <br>
+<%= render 'form' %>
 
-        <%= link_to "Return Home", root_path %>
-</body>
-#####
+
+
+
