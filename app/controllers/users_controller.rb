@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-
+  before_action :redirect_if_signed_in
   def show
   end
   
@@ -7,14 +7,13 @@ class UsersController < ApplicationController
       @user = User.new
     end
   
-  def create
-      @user = User.create(user_params)
-      if @user.id == nil 
-        @errors = @user.errors.full_messages
-        render :signup
-      else
+    def create  
+      @user = User.new(user_params)
+      if @user.save
         session[:user_id] = @user.id
-        redirect_to root_path
+        redirect_to user_pokemons_path(@user)
+      else
+        render :new
       end
     end
   

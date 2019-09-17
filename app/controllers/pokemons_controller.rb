@@ -1,7 +1,7 @@
 class PokemonsController < ApplicationController
   before_action :current_user # @user avlaiable for all actions 
   before_action :logged_in? #makes sure some1 not logged in can create,view,delete pokemon 
-
+  before_action :redirect_if_not_signed_in
   def index #user can view all the pokemon in there group
     @pokemons = @user.pokemons
 end
