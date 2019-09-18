@@ -24,7 +24,9 @@
  </tr>
 </table>
 <br>
-<%= link_to "Edit", edit_user_pokemon_path(@user, @pokemon)%> <br>
+<% if current_user == @user %>
+<%= link_to "Edit", edit_user_pokemon_path(@pokemon)%> <br>
 <%= link_to "Abandon this pokemon", user_pokemon_path(@user, @pokemon), method: "delete" %>
-<br>
-<%= render 'welcome/form' %>
+  <% end %>
+
+
