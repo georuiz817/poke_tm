@@ -6,4 +6,6 @@ class Pokemon < ApplicationRecord
   #associations 
   belongs_to :user 
   belongs_to :tm
+  
+
 end
