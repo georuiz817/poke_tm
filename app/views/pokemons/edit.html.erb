@@ -1,2 +1,8 @@
+<% if @pokemon.user == @user %>
 <h2> Edit </h2> 
 <%= render 'form' %>
+<% else %> 
+<p> this is not your pokemon that you are trying to edit. Please return home.</p> 
+<%= link_to "Return Home", root_path %>
+
+<% end %> 

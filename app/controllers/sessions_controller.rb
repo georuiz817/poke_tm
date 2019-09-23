@@ -4,23 +4,23 @@ class SessionsController < ApplicationController
     @user = User.new
   end
 
-  def create # post login
-    if auth
-      @user = User.find_or_create_by_omniauth(auth)
-      session[:user_id] = @user.id
-      redirect_to root_path(@user)
-    else
-      @user = User.find_by(email: user_params[:email])
-      if @user && @user.authenticate(user_params[:password])
-        session[:user_id] = @user.id
-        redirect_to root_path(@user)
-      else
-        redirect_to login_path
-      end
-    end
-  end
-    
-    
+  ###edited for omni
+  def create #this is post_login
+    if auth 
+        @user = User.find_or_create_by_omniauth(auth)
+            session[:user_id] = @user.id
+            redirect_to root_path
+        else
+            @user = User.find_by(email: user_params[:email])
+            if @user && @user.authenticate(user_params[:password])
+                session[:user_id] = @user.id
+                redirect_to root_path
+    else 
+            redirect_to root_path
+            end
+     end
+end
+  #######
 def logout
   session.delete :user_id
   redirect_to root_path

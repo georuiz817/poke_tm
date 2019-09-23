@@ -15,10 +15,13 @@ Rails.application.routes.draw do
 get '/auth/facebook/callback' => 'sessions#create'
 
 
-  # changing routes to not get confused with naming 
-  delete '/logout', to: "sessions#logout"
-  get '/signup', to: "users#signup"
-  post '/signup', to: "users#create"
-  get '/login', to: "sessions#login"
-  post '/login', to: "sessions#create"
+   # changing routes to not get confused with naming 
+   delete '/logout', to: "sessions#logout"
+   get '/signup', to: "users#signup"
+   post '/signup', to: "users#create"
+   get '/login', to: "sessions#login"
+   post '/login', to: "sessions#create"
 end
+
+
+
