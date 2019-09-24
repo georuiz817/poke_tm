@@ -6,7 +6,7 @@
 
 <%= form_for @pokemon do |f| %>
 <%= f.label :name, "Name" %>
-<%= f.text_field :name%>
+<%= f.text_field :name%> 
 <%= f.label :tm_id, "Equip the desired TM to this pokemon:" %>
 <%= f.collection_select :tm_id, Tm.all, :id, :name %> 
 <%= f.submit "Submit" %>

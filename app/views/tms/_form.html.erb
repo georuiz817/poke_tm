@@ -1,0 +1,33 @@
+<h1> Here are all avaliable TMS in this database </h1> 
+<body>
+<table>
+<thead>
+  <tr>
+    <th>Name</th>
+    <th>Element</th>
+    <th>Rarity</th> 
+  </tr>
+</thead>
+
+<tbody>
+  <% @tms.each do |tm| %>
+    <tr>
+      <td><%= tm.name %></td>
+      <td><%= tm.element %> </td>
+      <td><%= tm.rarity %> </td>
+      </tr>
+  <% end %>
+
+  </tbody>
+</table>
+<br>
+
+<p> As an added bonus, here is a quick look at all the TMS that are Very Rare </p> 
+<% @tms.rarity.each do |tm| %> 
+<ul>
+<li> <%= tm.name %> </li>
+</ul>
+<%  end %> 
+<br> 
+<%= render 'welcome/form' %>
+</body>
