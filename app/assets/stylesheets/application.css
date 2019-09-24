@@ -15,9 +15,13 @@
  */
 
  body {
-     border: 10px solid red;
-     padding: 20px;
      
+     padding: 20px;
+     background-image: url("https://wallpapercave.com/wp/ftUbDhb.jpg");
+     -webkit-background-size: cover;
+     -moz-background-size: cover;
+     -o-background-size: cover;
+     background-size: cover;
     }
 
 table, th, td {
