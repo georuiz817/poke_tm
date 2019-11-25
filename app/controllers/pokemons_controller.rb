@@ -9,7 +9,7 @@ end
 
 
 def show # user can look at a specific pokemon
-  @pokemon = Pokemon.find(params[:id])
+  
 end
 
 def new
@@ -35,8 +35,9 @@ def update
   if @pokemon.update(pokemon_params)
     redirect_to pokemon_path(@pokemon)
   else
+    @user = current_user
     @errors = @pokemon.errors.full_messages
-    render :edit
+    render :edit 
   end
 end
 

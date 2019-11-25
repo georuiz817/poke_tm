@@ -2,7 +2,6 @@ Rails.application.routes.draw do
  ##resources
  resources :tms
  resources :pokemons
- resources :users 
  
  resources :users do
     resources :pokemons
