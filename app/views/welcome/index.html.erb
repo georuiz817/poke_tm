@@ -1,21 +1,22 @@
 <body>
-<% if logged_in? %>
-  <h2> Welcome Trainer! Please choose a new action: </h2>
-  <ol>
-  <li> <%= link_to 'Add a pokemon to your group', new_user_pokemon_path(current_user)%> </li> 
-  <li> <%= link_to "view your pokemon", user_pokemons_path(current_user) %> </li>  
-  <li> <%= link_to 'View all avaliable TMs', tms_path %> </li>
-  <li> <%= link_to  "Logout", logout_path, method: :delete %> </li>
-  </ol>
+  <% if logged_in? %>
+    <h2> Welcome Trainer! Please choose a new action: </h2>
+    <ol>
+      <li> <%= link_to 'Add a pokemon to your group', new_user_pokemon_path(current_user)%> </li> 
+      <li> <%= link_to "view your pokemon", user_pokemons_path(current_user) %> </li>  
+      <li> <%= link_to 'View all avaliable TMs', tms_path %> </li>
+      <li> <%= link_to  "Logout", logout_path, method: :delete %> </li>
+    </ol>
 
   <% else %> 
-  <h2> Welcome to the poke_tm manager</h2>
-  <h3> Please choose an action </h3> 
-  <ol>
-    <li> <%= link_to "Login", login_path %> </li>
-    <li> <%= link_to "Enter with Facebook here!", "/auth/facebook"%></li> 
-    <li> <%= link_to 'Signup', signup_path %> </li> 
-  </ol>
-<% end %>
+    <div class='welcome-page'>
+      <h1>Poke⚡TM</h1>
+      <ol>
+        <li> <%= link_to "Login", login_path %> </li>
+        <li> <%= link_to "Enter with Facebook here!", "/auth/facebook"%></li> 
+        <li> <%= link_to 'Signup', signup_path %> </li> 
+      </ol>
+    </div>
+  <% end %>
 
 </body>
