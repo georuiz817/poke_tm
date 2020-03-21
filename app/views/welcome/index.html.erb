@@ -2,10 +2,10 @@
   <% if logged_in? %>
     <div class="welcome-page">
     <%= render 'welcome/form' %>
-    <h2>Welcome Trainer, Choose an action</h2>
+    <h2>Welcome, Choose an action</h2>
     <ol>
       <li> <%= link_to 'Add a pokemon to your group', new_user_pokemon_path(current_user)%> </li> 
-      <li> <%= link_to "view your pokemon", user_pokemons_path(current_user) %> </li>  
+      <li> <%= link_to "View your pokemon", user_pokemons_path(current_user) %> </li>  
       <li> <%= link_to 'View all avaliable TMs', tms_path %> </li>
       <li> <%= link_to  "Logout", logout_path, method: :delete %> </li>
     </ol>
