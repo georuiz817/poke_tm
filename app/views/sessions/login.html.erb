@@ -1,11 +1,18 @@
-<h1> login </h1>
-<p> <%= form_for @user, url: login_path do |f| %>
-     <%= f.label :email %>
-    <%= f.email_field :email %><br>
-    <%= f.label :password%>
-    <%= f.password_field :password %><br>
- 
-    <%= f.submit "login"%>
- <% end %> 
- </p>
- <%= render 'welcome/form' %>
+<div class='welcome-page'>
+<%= render 'welcome/form' %>
+   <h2>login</h2>
+   <%= form_for @user, url: login_path do |f| %>
+      <ul>
+         <li>
+            <%= f.label :email %>
+            <%= f.email_field :email %>
+         </li>
+         <li>
+            <%= f.label :password%>
+            <%= f.password_field :password %>
+         </li>
+         <%= f.submit 'login' %>
+      </ul>
+   <% end %> 
+</div>
+

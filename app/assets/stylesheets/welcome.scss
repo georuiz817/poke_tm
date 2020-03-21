@@ -1,27 +1,46 @@
-/////not logged in 
-.welcome-page ul{
-    display: inline-block;
- }
-
- .welcome-page{
+.welcome-page{
     text-align: center;
     h1{
         font-size: 100px;
         font-weight: 50;
         text-align: center;
     }
-    ul{
-        display: inline-block;
-     }
+    h2{
+        font-size: 50px;
+        text-decoration: underline;
+    }
     li{
         text-decoration: none;
         margin-bottom: 1%;
         font-size: 30px;
-        text-align: left;
-        margin-left: 36%;
+    }
+    ul{
+            list-style-type: none;
+            display: inline-block;
+            text-align:left;
+    }
+    ol{
+        display: inline-block;
+        text-align:left;  
+    }
+    .sign-up-button{
+        color: black;
+        background-color: #ffc83d;
+        border: thin solid black; /* Green */
+        font-size: 16px;
+    }
+    table{
+        border: 1px solid black;
+        }
+    td{
+        border: 1px solid black;
+    }
+    th{
+        border: 1px solid black;
     }
  }
+  
 
- //////////logged in 
+
 
  

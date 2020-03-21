@@ -1,8 +1,8 @@
 <body>
   <% if logged_in? %>
     <div class="welcome-page">
-    <h1>Poke⚡TM</h1>
-    <h2><u> Welcome Trainer, Choose an action</u></h2>
+    <%= render 'welcome/form' %>
+    <h2>Welcome Trainer, Choose an action</h2>
     <ol>
       <li> <%= link_to 'Add a pokemon to your group', new_user_pokemon_path(current_user)%> </li> 
       <li> <%= link_to "view your pokemon", user_pokemons_path(current_user) %> </li>  
@@ -12,7 +12,7 @@
     </div>
   <% else %> 
     <div class='welcome-page'>
-      <h1>Poke⚡TM</h1>
+    <%= render 'welcome/form' %>
       <ol>
         <li> <%= link_to "Login", login_path %> </li>
         <li> <%= link_to "Sign in with Facebook", "/auth/facebook"%></li> 

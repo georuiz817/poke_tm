@@ -1,20 +1,30 @@
-<h1> Sign up ! </h1>
-<% if @user.errors.any? %>
-<% @errors.each do |message| %>
-  <li><%= message %></li>
-<% end %>
-<% end %>
+  <div class="welcome-page">
+  <%= render 'welcome/form' %>
+    <h2><u>Sign up</u></h2>
+    <% if @user.errors.any? %>
+      <% @errors.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    <% end %>
+    
+  
+      <%= form_for @user do |f| %>
+      <ul>
+        <li>
+          <%= f.label :trainer %>
+          <%= f.text_field :trainer %> 
+        </li>
+        <li>
+          <%= f.label :email %>
+          <%= f.email_field :email %>
+        </li>
+        <li>
+          <%= f.label :password%>
+          <%= f.password_field :password %><br>
+        </li>
+        <%= f.submit %>
+      </ul>
+    <% end %> 
+  </div>
+   
 
-
-<p> <%= form_for @user do |f| %>
-    <%= f.label :trainer %>
-    <%= f.text_field :trainer %> <br>
-    <%= f.label :email %>
-    <%= f.email_field :email %><br>
-    <%= f.label :password%>
-    <%= f.password_field :password %><br>
- 
-    <%= f.submit %>
- <% end %> 
- </p>
- <%= render 'welcome/form' %>
