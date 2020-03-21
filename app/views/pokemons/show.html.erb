@@ -1,32 +1,17 @@
-<h1> Here are the details for <%= @pokemon.name%> </h1>
-
-
-<table>
- <tr>
-   <th>Pokemon</th>
-</tr>
- <tr>
- <td><%= @pokemon.name %></td>
- </tr>
-</table>
-<br>
-
-<table>
- <tr>
-   <th>Equipped TM</th> 
-   <th>Element</th>
-   <th>Rarity</th>
-</tr>
- <tr>
- <td><%= @pokemon.tm.name %></tdr> 
- <td><%= @pokemon.tm.element %> </td>
- <td><%= @pokemon.tm.rarity %></td> 
- </tr>
-</table>
-<br>
+  <%= render 'welcome/form' %>
+  <div class='welcome-page'>
+  <h2><%= @pokemon.name%> </h2>
+  <ol>
+  <li><%= @pokemon.tm.name %></li>
+  <li> <%= @pokemon.tm.element %> </li>
+ <li> <%= @pokemon.tm.rarity %> </li>
+ 
+ <br>
 <% if current_user == @user %>
 <%= link_to "Edit", edit_user_pokemon_path(@pokemon)%> <br>
 <%= link_to "Abandon this pokemon", user_pokemon_path(@user, @pokemon), method: "delete" %>
   <% end %>
 <br>
-  <%= render 'welcome/form' %>
+
+</div>
+

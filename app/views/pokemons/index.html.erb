@@ -1,12 +1,10 @@
- <h1> Here is your current Pokemon group </h1> 
- <table>
- <tr>
-   <th>Pokemon Name</th>
- </tr>
- <tr>
+  <%= render 'welcome/form' %>
+  <div class='welcome-page'>
+    <h2> Here is your current Pokemon group </h2> 
+
    <% @pokemons.each do |pokemon| %>
-    <td><%= link_to pokemon.name, user_pokemon_path(@user, pokemon)%></td>
-    </tr>
+    <li>
+      <%= link_to pokemon.name, user_pokemon_path(@user, pokemon)%>
+    </li>
    <% end %>
- </table>
- <%= render 'welcome/form' %>
+  </div>

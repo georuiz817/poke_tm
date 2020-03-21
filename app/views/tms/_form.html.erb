@@ -4,15 +4,11 @@
     <h2> Here are all avaliable TMS in this database </h2> 
 
     <table> 
-      <thead>
         <tr>
           <th>Name</th>
           <th>Element</th>
           <th>Rarity</th> 
         </tr>
-      </thead>
-
-      <tbody>
         <% @tms.each do |tm| %>
         <tr>
           <td><%= tm.name %></td>
@@ -20,16 +16,16 @@
           <td><%= tm.rarity %> </td>
         </tr>
         <% end %>
-      </tbody>
     </table>
 
-
+ 
     <p>** listed as very rare: </p> 
       <% @tms.rarity.each do |tm| %> 
         <ul>
           <li> <%= tm.name %> </li>
           </ul>
       <%  end %> 
+ 
     <br> 
   </div>
 </body>
