@@ -1,10 +1,10 @@
   <%= render 'welcome/form' %>
   <div class='welcome-page'>
   <h2><%= @pokemon.name%> </h2>
-  <ol>
-  <li><%= @pokemon.tm.name %></li>
-  <li> <%= @pokemon.tm.element %> </li>
- <li> <%= @pokemon.tm.rarity %> </li>
+  
+  <p>TM name: <%= @pokemon.tm.name %></p>
+  <p>TM type: <%= @pokemon.tm.element %> </p>
+ <p>TM rarity: <%= @pokemon.tm.rarity %> </p>
  
  <br>
 <% if current_user == @user %>
